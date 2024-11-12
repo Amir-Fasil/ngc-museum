@@ -11,10 +11,10 @@ Predictive Coding Network (PCN) Exhibit File:
 Fits a PCN classifier to the MNIST database.
 
 Usage:
-$ python sim_pcn.py --dataX="/path/to/train_patterns.npy" \
-                    --dataY="/path/to/train_labels.npy" \
-                    --devX="/path/to/dev_patterns.npy" \
-                    --devY="/path/to/dev_labels.npy" \
+$ python sim_pcn.py --dataX="/path/to/train_patterns.npz" \
+                    --dataY="/path/to/train_labels.npz" \
+                    --devX="/path/to/dev_patterns.npz" \
+                    --devY="/path/to/dev_labels.npz" \
                     --verbosity=0
 
 @author: The Neural Adaptive Computing Laboratory
