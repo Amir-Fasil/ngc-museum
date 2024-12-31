@@ -353,8 +353,8 @@ class BFA_SNN():
         #         _S = _add(_S, self.z1.s.value)
         #     else:
         #         _S.append(self.z1.s.value)
-
-        _yMu = softmax(yMu/T_learn) #self.T) ## estimate approximate label distribution
+        
+        _yMu = yMu / jnp.norm(yMu, axis =1 , keepdims = True)
         if get_latent_rates == True:
             _S = (_S * rGamma)/self.T
 

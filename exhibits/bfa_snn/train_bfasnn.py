@@ -202,21 +202,3 @@ jnp.save("exp/trAcc.npy", jnp.asarray(trAcc_set))
 jnp.save("exp/acc.npy", jnp.asarray(acc_set))
 jnp.save("exp/trNll.npy", jnp.asarray(trNll_set))
 jnp.save("exp/nll.npy", jnp.asarray(nll_set))
-
-
-###############################################
-# Testing the model
-test_model  = Model(subkeys[1], in_dim=x_dim, out_dim=y_dim, hid_dim=hid_dim, T=T, dt=dt, tau_m=tau_mem)
-test_model.load_model()
-
-def test_model(test_model, Xtest):
-    # Perform inference using the model
-    _, yMu, _ = test_model.process(obs=Xtest, lab=None, adapt_synapses=False, label_dist_estimator="spikes", get_latent_rates=False)
-
-    # yMu will be the model's output (predicted embedded vectors)
-    return yMu
-
-# Call the test function
-output = test_model(model, test_model)
-# Print the output
-print("Generated Output:", output)
