@@ -50,15 +50,6 @@ _X = jnp.load(dataX)
 _Y = jnp.load(dataY)
 Xdev = jnp.load(devX)
 Ydev = jnp.load(devY)
-
-_X = (_X - jnp.mean(_X, axis=0)) / jnp.std(_X, axis=0)
-_Y = (_Y - jnp.mean(_Y, axis=0)) / jnp.std(_Y, axis=0)
-Xdev = (Xdev - jnp.mean(Xdev, axis=0)) / jnp.std(Xdev, axis=0)
-Ydev = (Ydev - jnp.mean(Ydev, axis=0)) / jnp.std(Ydev, axis=0)
-
-
-
-
 x_dim = _X.shape[1]
 patch_shape = (int(jnp.sqrt(x_dim)), int(jnp.sqrt(x_dim)))
 y_dim = _Y.shape[1]
