@@ -51,10 +51,10 @@ _Y = jnp.load(dataY)
 Xdev = jnp.load(devX)
 Ydev = jnp.load(devY)
 
-_X = (_X - np.mean(_X, axis=0)) / np.std(_X, axis=0)
-_Y = (_Y - np.mean(_Y, axis=0)) / np.std(_Y, axis=0)
-Xdev = (Xdev - np.mean(Xdev, axis=0)) / np.std(Xdev, axis=0)
-Ydev = (Ydev - np.mean(Ydev, axis=0)) / np.std(Ydev, axis=0)
+_X = (_X - jnp.mean(_X, axis=0)) / jnp.std(_X, axis=0)
+_Y = (_Y - jnp.mean(_Y, axis=0)) / jnp.std(_Y, axis=0)
+Xdev = (Xdev - jnp.mean(Xdev, axis=0)) / jnp.std(Xdev, axis=0)
+Ydev = (Ydev - jnp.mean(Ydev, axis=0)) / jnp.std(Ydev, axis=0)
 
 
 
